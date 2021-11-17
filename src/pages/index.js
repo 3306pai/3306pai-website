@@ -38,7 +38,8 @@ function Home() {
   }
   return (
     <Layout
-      title={`3306π`}
+      title={`3306π | 围绕 MySQL，大数据，云原生等核心技术，
+      交流前沿数据库相关技术，分享干货知识，拒绝放水。`}
       description="围绕 MySQL，大数据，云原生等核心技术，交流前沿数据库相关技术，分享干货知识，拒绝放水。">
       <main className={styles.homeMain}>
         <div className={styles.banner}>
