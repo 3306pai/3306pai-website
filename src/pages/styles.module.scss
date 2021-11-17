@@ -1,0 +1,295 @@
+.homeMain{
+  @include gl-home-main;
+  width: 100%;
+  .banner{
+    height: 932px;
+    background: url('@site/static/img/home/background.png');
+    background-size: 100% 100%;
+    color: #333;
+    .bannerContaniner{
+      height: 100%;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-items: center;
+      justify-content: center;
+      p{
+        margin-bottom: 31px;
+        &.pi{
+          font-weight: bold;
+          font-size: 72px;
+          line-height: 80px;
+        }
+        &.description{
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 44px;
+        }
+      }
+      .text{
+        position: relative;
+        .roundImage{
+          position: absolute;
+          top: -100px;
+          left: -60px;
+          width: 154px;
+          z-index: -1;
+        }
+      }
+      .manImage{
+        position: absolute;
+        right: -73px;
+        bottom: -27px;
+        width: 644px;
+        z-index: -1;
+      }
+    }
+  }
+  .activeSchedule{
+    width: $container-width-min;
+    margin: 0 auto;
+    .title{
+      font-weight: 600;
+      color: #222;
+      line-height: 45px;
+      font-size: 32px;
+      padding-bottom: 47px;
+      padding-top: 160px;
+      text-align: center;
+    }
+    table{
+      margin-bottom: 160px;
+      display: table;
+    }
+  }
+  .guest{
+    color: #333;
+    text-align: center;
+    padding-bottom: 120px;
+    line-height: 42px;
+    .mainTitle{
+      font-size: 30px;
+      padding-bottom: 60px;
+    }
+    .guestContainer{
+      position: relative;
+      height: 280px;
+      margin-bottom: 120px;
+      padding-left: 120px;
+      padding-right: 120px;
+      .pre, .next{
+        width: 40px;
+        height: 80px;
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+      .pre{
+        left: 0;
+      }
+      .next{
+        right: 0;
+      }
+      .mySwiperLink{
+        display: block;
+        color: #333;
+        text-decoration: none;
+      }
+      .swiperImg{
+        display: block;
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+        border-radius: 50%;
+      }
+      .name{
+        font-size: 24px;
+        line-height: 28px;
+        padding-top: 28px;
+        padding-bottom: 16px;
+      }
+      .title{
+        white-space: nowrap;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+    .sponsor{
+      width: $container-width-min;
+      margin: 0 auto;
+      .sponsorMainTitle {
+        color: #333;
+        font-size: 30px;
+        line-height: 42px;
+        padding-bottom: 35px;
+        &.hostMainTitle{
+          padding-top: 95px;
+        }
+      }
+      .sponsorBox{
+        display: flex;
+        justify-content: space-between;
+        &.hostBox{
+          justify-content: center;
+          a{
+            margin-right: 111px;
+            &:last-child{
+              margin-right: 0;
+            }
+         }
+        }
+        img{
+          display: block;
+          width: 120px;
+          height: 120px;
+        }
+      }
+    }
+    
+    
+  }
+  @include media{
+    .banner{
+      color: #111;
+      height: mpx(300);
+      .bannerContaniner{
+        padding-left: mpx(20);
+        padding-right: mpx(20);
+        p{
+          margin-bottom: mpx(15);
+          &.pi{
+            font-size: mpx(20);
+            line-height: mpx(20);
+          }
+          &.description{
+            font-weight: 400;
+            font-size: mpx(13);
+            line-height: mpx(20);
+            margin-bottom: mpx(20);
+          }
+        }
+        .contact{
+          font-size: mpx(13);
+          line-height: mpx(20);
+        }
+        .text{
+          .roundImage{
+            width: mpx(75);
+            top: mpx(-60);
+            left: mpx(-15);
+          }
+        }
+        .manImage{
+          width: mpx(200);
+          right: 0;
+          top: 0;
+        }
+      }
+    }
+    .activeSchedule{
+      width: 100%;
+      padding-left: mpx(5);
+      padding-right: mpx(5);
+      .title{
+        line-height: mpx(20);
+        font-size: mpx(16);
+        padding-bottom: mpx(24);
+        padding-top: mpx(24);
+      }
+      table{
+        margin-bottom: 160px;
+        display: table;
+      }
+    }
+    .guest {
+      padding-bottom: mpx(20);
+      line-height: mpx(22);
+      .mainTitle{
+        font-size: mpx(16);
+        padding-bottom: mpx(30);
+      }
+      .guestContainer{
+        padding-left: mpx(32);
+        padding-right: mpx(32);
+        height: mpx(150);
+        margin-bottom: mpx(60);
+        .pre, .next{
+          width: mpx(20);
+          height: mpx(40);
+        }
+        .pre{
+          left: mpx(10);
+        }
+        .next{
+          right: mpx(10);
+        }
+        .swiperImg{
+          width: mpx(90);
+          height: mpx(90);
+        }
+        .name{
+          font-size: mpx(12);
+          line-height: mpx(14);
+          padding-top: mpx(14);
+          padding-bottom: mpx(8);
+        }
+        .title{
+          font-size: mpx(8);
+          line-height: mpx(10);
+        }
+      }
+      .sponsor{
+        width: 100%;
+        padding-left: mpx(15);
+        padding-right: mpx(15);
+        .sponsorMainTitle {
+          font-size: mpx(15);
+          line-height: mpx(21);
+          padding-bottom: mpx(17);
+          &.hostMainTitle{
+            padding-top: mpx(20);
+          }
+        }
+        .sponsorBox{
+          display: flex;
+          justify-content: space-between;
+          &.hostBox{
+            justify-content: center;
+            a{
+              margin-right: mpx(20);
+           }
+          }
+          img{
+            display: block;
+            width: mpx(60);
+            height: mpx(60);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// table overwrite
+table th, table td{
+  border: none;
+  text-align: center;
+}
+table tr{
+  border-top: none;
+}
+table td{
+  font-size: 20px;
+  height: 120px;
+}
+table thead tr {
+  border: none;
+  color: #333;
+  background-color: #FFF4E8;
+  height: 87px;
+  font-size: 24px;
+}
+

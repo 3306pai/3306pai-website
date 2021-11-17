@@ -1,0 +1,185 @@
+/*import global scss*/
+@import "./font.scss";
+@import "./_iconfont.scss";
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-link-color: #fff;
+  --ifm-table-stripe-background: #fff;
+  --ifm-dropdown-hover-background-color: #333;    
+  --ifm-dropdown-link-color: #fff;
+  --ifm-dropdown-background-color: #F8BA74;
+  --ifm-menu-link-sublist-icon: url('@site/static/img/common/arrow_right.png');
+  --ifm-menu-color:#687497;
+  --swiper-pagination-bullet-inactive-color:#76AFF7;
+  --ifm-navbar-link-hover-color: #76AFF7;
+  --ifm-navbar-item-padding-vertical:0;
+  --ifm-navbar-item-padding-horizontal:0;
+  --ifm-navbar-link-color: #333;
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-background-color: #fff;
+  --ifm-color-primary: #25c2a0;
+  --ifm-navbar-height: auto;
+  --ifm-color-primary-dark: rgb(33, 175, 144);
+  --ifm-color-primary-darker: rgb(31, 165, 136);
+  --ifm-color-primary-darkest: rgb(26, 136, 112);
+  --ifm-color-primary-light: rgb(70, 203, 174);
+  --ifm-color-primary-lighter: rgb(102, 212, 189);
+  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-menu-color-active: #F8BA74;
+  --ifm-code-font-size: 95%;
+}
+.navbarHidden_src-theme-Navbar-styles-module{
+  top: none!important;
+}
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.navbar{
+  border-bottom: 1px solid rgba(112,155,231, 0.2);
+  background-color: #fff;
+  padding: 0;
+}
+.navbar__title{
+  display: none;
+}
+.navbar__logo{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  img{
+    width: mpx(50);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+.navbar-sidebar {
+  .navbar__logo{
+   left: mpx(40);
+   top: mpx(32);
+  }
+}
+.navbar__inner_pc{
+  background: linear-gradient(221deg, rgba(255, 255, 255, 0) 0%, rgba(254, 144, 21, 0.1) 100%);
+  width: 100%;
+  margin: 0 auto;
+  .navbar__inner{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: $container-width;
+    height: 4.166667vw;
+    justify-content: space-between;
+    .navbar__inner-logo{
+      width: 88px;
+      height: 74px;
+      position: relative;
+      top: 4px;
+    }
+  }
+}
+.navbar__inner{
+  @include media{
+    height: mpx(44);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.navbar__inner-phone-wrap{
+  width: 100%;
+  .navbar__inner{
+    padding-left: mpx(15);
+    padding-right: mpx(15);
+  }
+}
+.navbar__items_wrap {
+  display: flex;
+  .navbar__item{
+    font-size: 16px;
+    font-family: PingFangSCRegular;
+    margin-right: 80px;
+    text-decoration: underline;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+.navbar__link:hover, .navbar__link--active{
+  color: #FC9015 ;
+}
+.navbar__link--active{
+  position: relative;
+}
+.navbar-sidebar__brand{
+  padding-top: 40px;
+  padding-bottom: 30px;
+  justify-content: space-between;
+}
+.menu__list-item--collapsed .menu__link--sublist:after {
+  transform: rotateZ(0deg);
+}
+.menu__link--sublist:after{
+  transform: rotateZ(90deg);
+}
+/*
+  swiper init
+*/
+.swiper{
+  height: 100%;
+  width: 100%;
+  
+  .swiper-wrapper{
+    height: 100%;
+  }
+}
+.swiper-button-prev, .swiper-button-next{
+  width: 40px!important;
+}
+.swiper-button-prev:after, .swiper-button-next:after{
+  display: block;
+  content: ''!important;
+  width: 40px;
+  height: 80px;
+  background: url('@site/static/img/home/pre.png');
+  background-size: cover;
+  position: relative;
+  left: -10px;
+}
+.swiper-button-next:after{
+  background: url('@site/static/img/home/next.png');
+  background-size: cover;
+  left: 10px;
+}
+
+@include media{
+  .swiper-button-prev, .swiper-button-next{
+    width: mpx(20)!important;
+  }
+  .swiper-button-prev:after, .swiper-button-next:after{
+    width: mpx(20);
+    height: mpx(40);
+    left:  mpx(-10);
+  }
+  .swiper-button-next:after{
+    left: mpx(10);
+  }
+}
+
+
+
+
+ 

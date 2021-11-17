@@ -1,0 +1,88 @@
+.homeMain{
+  @include gl-home-main;
+  .banner{
+    height: 932px;
+    background: url('@site/static/img/home/background.png');
+    background-size: 100% 100%;
+    color: #333;
+    position: relative;
+    .bannerContaniner{
+      height: 100%;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-items: center;
+      justify-content: center;
+      p{
+        margin-bottom: 31px;
+        &.pi{
+          font-size: 40px;
+          line-height: 68px;
+          font-weight: 600;
+        }
+        &.description{
+          font-weight: 400;
+          font-size: 30px;
+          line-height: 52px;
+          margin-bottom: 50px;
+        }
+      }
+      .contact{
+        font-size: 24px;
+        line-height: 60px;
+        color: #333;
+      }
+      .text{
+        position: relative;
+        .roundImage{
+          position: absolute;
+          top: -40px;
+          left: -125px;
+          width: 154px;
+          z-index: -1;
+        }
+      }
+    }
+    .manImage{
+      position: absolute;
+      width: 950px;
+      right: 0;
+      bottom: 88px;
+      z-index: -1;
+    }
+  }
+  @include media{
+    .banner{
+      height: mpx(300);
+      padding-left: mpx(20);
+      .bannerContaniner{
+        p{
+          margin-bottom: mpx(15);
+          &.pi{
+            font-size: mpx(14);
+            line-height: mpx(20);
+          }
+          &.description{
+            font-weight: 400;
+            font-size: mpx(13);
+            line-height: mpx(20);
+            margin-bottom: mpx(20);
+          }
+        }
+        .contact{
+          font-size: mpx(13);
+          line-height: mpx(20);
+        }
+        .text{
+          .roundImage{
+            width: mpx(55);
+          }
+        }
+      }
+      .manImage{
+        width: mpx(300);
+      }
+      
+    }
+  }
+}
