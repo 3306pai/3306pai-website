@@ -3,8 +3,6 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 /***
  * animation plugins
  */
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import clsx from 'clsx';
 import SkipToContent from '@theme/SkipToContent';
 import AnnouncementBar from '@theme/AnnouncementBar';
@@ -15,9 +13,6 @@ import LayoutHead from '@theme/LayoutHead';
 import useKeyboardNavigation from '@theme/hooks/useKeyboardNavigation';
 import './styles.scss';
 
-if (ExecutionEnvironment.canUseDOM) {
-  AOS.init();
-}
 function Layout(props) {
   const {
     children,

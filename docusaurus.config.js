@@ -85,7 +85,7 @@ const config = {
           {to: '/blog/databend-architecture', label: 'Blog', position: 'left'},
           {
             type: 'dropdown',
-            label: 'Resources',
+            label: '资源',
             position: 'left',
             items: [
               {
