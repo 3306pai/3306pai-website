@@ -26,6 +26,5 @@ jobs:
         env:
           REPO: git@github.com:3306pai/3306pai.github.io.git
           BRANCH: main
-          FOLDER: build
+          FOLDER: 3306pi
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
-          KNOWN_HOSTS_FILE: 3306pai.github.io.git/3306pi
