@@ -24,7 +24,7 @@ jobs:
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:
-          REPO: git@github.com:3306pai/3306pai.github.io.git
+          REPO: git@github.com:3306pai/3306pai.github.io.git/3306pai
           BRANCH: main
           FOLDER: build
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
