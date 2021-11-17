@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: '3306π',
   tagline: '3306π',
-  url: 'https://databend.rs/',
-  baseUrl: '/',
+  url: 'https://3306pai.github.io',
+  baseUrl: '/3306pai/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
