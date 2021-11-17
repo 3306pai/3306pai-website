@@ -1,5 +1,5 @@
 ---
-slug: first-blog-post
+slug: liukaiyang-action
 title: liukaiyang-action
 authors:
   name: Gao Wei
