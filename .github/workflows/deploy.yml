@@ -28,4 +28,4 @@ jobs:
           BRANCH: main
           FOLDER: build
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
-          KNOWN_HOSTS_FILE: 3306pi
+          KNOWN_HOSTS_FILE: 3306pai.github.io.git/3306pi
