@@ -78,7 +78,7 @@ const config = {
             to: '/',
             position: 'left',
             label: '首页',
-            activeBaseRegex: '^/$',
+            activeBaseRegex: '^/3306pai/$',
           },
           {to: '/metting/3306pai-sz-2021', label: '会议', position: 'left'},
           // {to: '/databend-cloud2', label: '赞助商', position: 'left'},
