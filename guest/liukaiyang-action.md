@@ -1,12 +1,8 @@
 ---
-slug: liukaiyang-action
-title: liukaiyang-action
+slug:  刘开洋 | 爱可生
+title: 刘开洋 | 爱可生
 authors:
-  name: Gao Wei
-  title: Docusaurus Core Team
-  url: https://github.com/wgao19
-  image_url: https://github.com/wgao19.png
-tags: [hola, docusaurus]
+tags: [爱可生, 3306π深圳站2021]
 ---
 ![](https://3306pai-1255499614.cos.ap-guangzhou.myqcloud.com/sz2021/%E5%88%98%E5%BC%80%E6%B4%8B.jpg)
 
