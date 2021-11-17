@@ -10,39 +10,39 @@ const guest = {
   sponsorData: [
     {
       title: "万里云数据库",
-      logo: "/static/img/home/greatDB.png",
+      logo: "img/home/greatDB.png",
       link: 'https://www.greatdb.com/'
     },
     {
       title: "爱可生",
-      logo: "/static/img/home/action.png",
+      logo: "img/home/action.png",
       link: 'https://www.actionsky.com/'
     },
     {
       title: "华为",
-      logo: "/static/img/home/huawei.png",
+      logo: "img/home/huawei.png",
       link: 'https://www.huaweicloud.com/'
     },
     {
       title: "Databend",
-      logo: "/static/img/home/databend.png",
+      logo: "img/home/databend.png",
       link: 'https://databend.com/'
     },
     {
       title: "RadonDB",
-      logo: "/static/img/home/radonDB.png",
+      logo: "img/home/radonDB.png",
       link: 'https://radondb.io/'
     },
   ],
   hostData: [
     {
       title: "3306π",
-      logo: "/static/img/home/3306π.png",
+      logo: "img/home/3306π.png",
       link: null
     },
     {
       title: "Redis中国用户组",
-      logo: "/static/img/home/redis.png",
+      logo: "img/home/redis.png",
       link: null
     },
   ]

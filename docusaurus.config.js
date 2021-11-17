@@ -140,7 +140,7 @@ const config = {
             items: [
               {
                 label: 'twitter',
-                icon: '/static/img/home/fficialAccount.png',
+                icon: 'img/home/fficialAccount.png',
                 to: '/'
               }
             ],
