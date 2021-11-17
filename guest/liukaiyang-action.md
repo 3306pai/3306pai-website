@@ -1,5 +1,5 @@
 ---
-slug:  刘开洋 | 爱可生
+slug:  liukaiyang-action
 title: 刘开洋 | 爱可生
 authors:
 tags: [爱可生, 3306π深圳站2021]
