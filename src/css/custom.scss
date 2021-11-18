@@ -6,8 +6,8 @@
   --ifm-link-color: #fff;
   --ifm-table-stripe-background: #fff;
   --ifm-dropdown-hover-background-color: #333;    
-  --ifm-dropdown-link-color: #fff;
-  --ifm-dropdown-background-color: #F8BA74;
+  --ifm-dropdown-link-color: #666666;
+  --ifm-dropdown-background-color: #FFF9F2;
   --ifm-menu-link-sublist-icon: url('@site/static/img/common/arrow_right.png');
   --ifm-menu-color:#687497;
   --swiper-pagination-bullet-inactive-color:#76AFF7;
@@ -27,6 +27,10 @@
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-menu-color-active: #F8BA74;
   --ifm-code-font-size: 95%;
+}
+.dropdown__link:hover, .dropdown__link--active {
+  background-color: #FEF2E5;
+  color: #FC9015;
 }
 .navbarHidden_src-theme-Navbar-styles-module{
   top: none!important;
