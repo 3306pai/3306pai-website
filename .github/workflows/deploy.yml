@@ -29,7 +29,7 @@ jobs:
         with:
           source-directory: 'build'
           destination-github-username:  ${{ secrets.DESTINATION_GITHUB_NAME }}
-          destination-repository-name: ${{ secrets.DESTINATION-REPOSITORY-NAME }}
+          destination-repository-name: '3306pai.github.io'
           target-directory: '3306pai'
           user-email: ${{ secrets.UESR_EMAIL }}
           target-branch: main
