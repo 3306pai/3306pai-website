@@ -29,7 +29,7 @@ jobs:
         with:
           source-directory: 'build'
           destination-github-username: '3306pai'
-          destination-repository-name: 'git@github.com:3306pai/3306pai.github.io'
+          destination-repository-name: '3306pai.github.io'
           target-directory: '3306pai'
           user-email: 787025321@qq.com
           target-branch: main
