@@ -20,11 +20,16 @@ jobs:
         run: yarn
       - name: Build
         run: yarn build
+      
 
-      - name: Deploy
-        uses: s0/git-publish-subdir-action@develop
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
         env:
-          REPO: git@github.com:3306pai/3306pai.github.io.git
-          BRANCH: main
-          FOLDER: build
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'build'
+          destination-github-username: '3306pai'
+          destination-repository-name: 'git@github.com:3306pai/3306pai.github.io.git'
+          target-directory: '3306pai'
+          user-email: 787025321@qq.com
+          target-branch: main
