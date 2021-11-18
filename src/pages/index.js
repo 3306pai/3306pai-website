@@ -14,13 +14,13 @@ import styles from './styles.module.scss';
 import manImages from '@site/static/img/home/man.png';
 import roundImages from '@site/static/img/home/round.png';
 import table from '@site/static/json/activeSchedule';
-import guest from '@site/static/json/guest';
+import mentors from '@site/static/json/mentors';
 import company from '@site/static/json/company';
 
 SwiperCore.use([Navigation, Autoplay]);
 function Home() {
   const {tableTitle, tableData} = table;
-  const {guestData} = guest;
+  const {mentorsData} = mentors;
   const {sponsorData, hostData} = company;
   const [controlledSwiper, setControlledSwiper] = useState(null);
   const [controlledSwiperPhone, setControlledSwiperPhone] = useState(null);
@@ -83,9 +83,9 @@ function Home() {
             </tbody>
           </table>
         </div>
-        <div className={`${styles.guest} global-container-width`}>
+        <div className={`${styles.mentors} global-container-width`}>
           <div className={styles.mainTitle}>云原生--数据和未来-3306π深圳站</div>
-          <div className={styles.guestContainer} data-pc>
+          <div className={styles.mentorsContainer} data-pc>
             <img src={useBaseUrl('/img/home/pre.png')}  onClick={swiperPre} className={styles.pre}/>
             <img src={useBaseUrl('/img/home/next.png')} onClick={swiperNext} className={styles.next}/>
             <Swiper 
@@ -99,7 +99,7 @@ function Home() {
               }}
               onSwiper={(swiper)=>setControlledSwiper(swiper)}
               className="mySwiper">
-              {guestData.map((item, key)=>{
+              {mentorsData.map((item, key)=>{
                 return  <SwiperSlide key={key}>
                           <Link to={item.link} className={styles.mySwiperLink}>
                             <img className={styles.swiperImg} src={useBaseUrl(item.avatar)}/>
@@ -112,7 +112,7 @@ function Home() {
               })}
             </Swiper>
           </div>
-          <div className={styles.guestContainer} data-phone>
+          <div className={styles.mentorsContainer} data-phone>
             <img src={useBaseUrl('/img/home/pre.png')} onClick={swiperPrePhone} className={styles.pre}/>
             <img src={useBaseUrl('/img/home/next.png')} onClick={swiperNextPhone} className={styles.next}/>
             <Swiper 
@@ -126,7 +126,7 @@ function Home() {
                 "disableOnInteraction": false
               }}
               className="mySwiper">
-              {guestData.map((item, key)=>{
+              {mentorsData.map((item, key)=>{
                 return  <SwiperSlide key={key}>
                           <Link to={item.link} className={styles.mySwiperLink}>
                             <img className={styles.swiperImg} src={useBaseUrl(item.avatar)}/>

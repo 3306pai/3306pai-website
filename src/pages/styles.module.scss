@@ -62,7 +62,7 @@
       display: table;
     }
   }
-  .guest{
+  .mentors{
     color: #333;
     text-align: center;
     padding-bottom: 62px;
@@ -71,7 +71,7 @@
       font-size: 30px;
       padding-bottom: 60px;
     }
-    .guestContainer{
+    .mentorsContainer{
       position: relative;
       height: 280px;
       margin-bottom: 120px;
@@ -203,14 +203,14 @@
         display: table;
       }
     }
-    .guest {
+    .mentors {
       padding-bottom: mpx(20);
       line-height: mpx(22);
       .mainTitle{
         font-size: mpx(16);
         padding-bottom: mpx(30);
       }
-      .guestContainer{
+      .mentorsContainer{
         padding-left: mpx(32);
         padding-right: mpx(32);
         height: mpx(150);

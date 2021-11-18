@@ -1,4 +1,4 @@
-const guest = {
+const mentors = {
   comment: {
     _comment: "this is commets",
     title: "公司名称",
@@ -47,4 +47,4 @@ const guest = {
     },
   ]
 }
-export default guest;
+export default mentors;

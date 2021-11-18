@@ -58,10 +58,10 @@ const config = {
       '@docusaurus/plugin-content-docs',
       /** @type {import('@docusaurus/plugin-content-docs').Options} */
       ({
-        id: 'guest',
-        path: 'guest',
-        routeBasePath: 'guest',
-        sidebarPath: require.resolve('./sidebarsGuest.js'),
+        id: 'mentors',
+        path: 'mentors',
+        routeBasePath: 'mentors',
+        sidebarPath: require.resolve('./sidebarsMentors.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       }),
@@ -90,7 +90,7 @@ const config = {
             items: [
               {
                 label: '嘉宾',
-                to: '/guest/liukaiyang-action',
+                to: '/mentors/liukaiyang-action',
               },
               {
                 label: '往期PPT',
@@ -122,7 +122,7 @@ const config = {
               },
               {
                 label: '嘉宾',
-                to: '/guest/liukaiyang-action',
+                to: '/mentors/liukaiyang-action',
               }
             ],
           },
