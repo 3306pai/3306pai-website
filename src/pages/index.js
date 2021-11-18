@@ -1,6 +1,5 @@
 import React, {useState, useRef} from 'react';
 import { Link } from '@docusaurus/router';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
@@ -86,8 +85,8 @@ function Home() {
         <div className={`${styles.mentors} global-container-width`}>
           <div className={styles.mainTitle}>云原生--数据和未来-3306π深圳站</div>
           <div className={styles.mentorsContainer} data-pc>
-            <img src={useBaseUrl('/img/home/pre.png')}  onClick={swiperPre} className={styles.pre}/>
-            <img src={useBaseUrl('/img/home/next.png')} onClick={swiperNext} className={styles.next}/>
+            <img src={require('@site/static/img/home/pre.png').default} onClick={swiperPre} className={styles.pre}/>
+            <img src={require('@site/static/img/home/next.png').default} onClick={swiperNext} className={styles.next}/>
             <Swiper 
               slidesPerView={4} 
               spaceBetween={30}
@@ -102,7 +101,7 @@ function Home() {
               {mentorsData.map((item, key)=>{
                 return  <SwiperSlide key={key}>
                           <Link to={item.link} className={styles.mySwiperLink}>
-                            <img className={styles.swiperImg} src={useBaseUrl(item.avatar)}/>
+                            <img className={styles.swiperImg} src={item.avatar}/>
                             <div className={styles.name}>{item.name}</div>
                             <div className={styles.title}>
                               <span>{item.title}</span> | <span>{item.company}</span>
@@ -113,8 +112,8 @@ function Home() {
             </Swiper>
           </div>
           <div className={styles.mentorsContainer} data-phone>
-            <img src={useBaseUrl('/img/home/pre.png')} onClick={swiperPrePhone} className={styles.pre}/>
-            <img src={useBaseUrl('/img/home/next.png')} onClick={swiperNextPhone} className={styles.next}/>
+            <img src={require('@site/static/img/home/pre.png').default} onClick={swiperPrePhone} className={styles.pre}/>
+            <img src={require('@site/static/img/home/next.png').default} onClick={swiperNextPhone} className={styles.next}/>
             <Swiper 
               slidesPerView={2} 
               spaceBetween={30}
@@ -129,7 +128,7 @@ function Home() {
               {mentorsData.map((item, key)=>{
                 return  <SwiperSlide key={key}>
                           <Link to={item.link} className={styles.mySwiperLink}>
-                            <img className={styles.swiperImg} src={useBaseUrl(item.avatar)}/>
+                            <img className={styles.swiperImg} src={item.avatar}/>
                             <div className={styles.name}>{item.name}</div>
                             <div className={styles.title}>
                               <span>{item.title}</span> | <span>{item.company}</span>
@@ -145,7 +144,7 @@ function Home() {
               {sponsorData.map((item, index)=>{
                 return  (
                   <a target="_blank" href={item.link} title={item.title} key={index}>
-                    <img src={useBaseUrl(item.logo)} />
+                    <img src={item.logo} />
                   </a>
                 )
               })}
@@ -158,7 +157,7 @@ function Home() {
               {hostData.map((item, index)=>{
                 return  (
                   <a target="_blank" href={item.link} title={item.title} key={index}>
-                    <img src={useBaseUrl(item.logo)} />
+                    <img src={item.logo} />
                   </a>
                 )
               })}

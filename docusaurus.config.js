@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: '3306π',
   tagline: '3306π',
-  url: 'https://3306pai.github.io',
+  url: 'https://3306pai.cn',
   baseUrl: '/3306pai/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -140,7 +140,8 @@ const config = {
             items: [
               {
                 label: 'twitter',
-                icon: 'img/home/fficialAccount.png',
+                // @ts-ignore
+                icon: 'followUsImg',
                 to: '/'
               }
             ],

@@ -2,7 +2,7 @@ const mentors = {
   comment: {
     _comment: "这是赞助商和主办方的数据",
     title: "公司名称",
-    logo: "公司log 地址对应static文件夹下，注意：static不用添加,static/img/home/greatDB.png =》img/home/greatDB.png，参考下方示例",
+    logo: "公司log 地址对应static文件夹下，参考下方示例",
     link: "公司链接",
     sponsorData: "赞助商数据",
     hostData: "主办方数据"
@@ -10,39 +10,39 @@ const mentors = {
   sponsorData: [
     {
       title: "万里云数据库",
-      logo: "img/home/greatDB.png",
+      logo: require('@site/static/img/home/greatDB.png').default,
       link: 'https://www.greatdb.com/'
     },
     {
       title: "爱可生",
-      logo: "img/home/action.png",
+      logo: require('@site/static/img/home/action.png').default,
       link: 'https://www.actionsky.com/'
     },
     {
       title: "华为",
-      logo: "img/home/huawei.png",
+      logo: require('@site/static/img/home/huawei.png').default,
       link: 'https://www.huaweicloud.com/'
     },
     {
       title: "Databend",
-      logo: "img/home/databend.png",
+      logo: require('@site/static/img/home/databend.png').default,
       link: 'https://databend.com/'
     },
     {
       title: "RadonDB",
-      logo: "img/home/radonDB.png",
+      logo: require('@site/static/img/home/radonDB.png').default,
       link: 'https://radondb.io/'
     },
   ],
   hostData: [
     {
       title: "3306π",
-      logo: "img/home/3306π.png",
+      logo: require('@site/static/img/home/3306π.png').default,
       link: null
     },
     {
       title: "Redis中国用户组",
-      logo: "img/home/redis.png",
+      logo: require('@site/static/img/home/redis.png').default,
       link: null
     },
   ]

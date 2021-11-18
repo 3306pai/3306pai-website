@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import { useThemeConfig } from '@docusaurus/theme-common';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
+const bottomImgs = {
+  followUsImg: require('@site/static/img/home/fficialAccount.png').default
+}
 
 function Footer() {
   const {
@@ -21,7 +23,7 @@ function Footer() {
                     {item.items.map((inner, i)=>{
                       return <div key={i} className={`${styles.item} ${inner.icon?styles.itemIcon:''}`}>
                                 {inner.icon
-                                ? <img className={styles.followUs} src={useBaseUrl(inner.icon)}/>
+                                ? <img className={styles.followUs} src={bottomImgs[inner.icon]}/>
                                 : (inner.to?<Link  href={inner.to}>{inner.label}</Link>:<a target="_blank" href={inner.href}>{inner.label}</a>)}
                             </div>
                     })}
