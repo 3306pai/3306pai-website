@@ -1,6 +1,6 @@
 const table = {
   comment: {
-    _comment: "this is commets",
+    _comment: "这是活动规划的数据",
     time: "时间",
     area: "地区",
     subject: "主题",

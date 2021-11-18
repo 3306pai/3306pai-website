@@ -1,9 +1,9 @@
 const mentors = {
   comment: {
-    _comment: "this is commets",
+    _comment: "这是赞助商和主办方的数据",
     title: "公司名称",
-    logo: "商标",
-    link: "链接",
+    logo: "公司log 地址对应static文件夹下，注意：static不用添加,static/img/home/greatDB.png =》img/home/greatDB.png，参考下方示例",
+    link: "公司链接",
     sponsorData: "赞助商数据",
     hostData: "主办方数据"
   },

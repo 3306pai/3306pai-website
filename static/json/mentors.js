@@ -1,7 +1,7 @@
 const mentors = {
   comment: {
-    _comment: "this is commets",
-    avatar: "头像",
+    _comment: "这是嘉宾的数据",
+    avatar: "头像，在static文件夹下。注意：static不用添加,static/img/mentors/songlibing.jpg =》img/mentors/songlibing.jpg，参考下方示例",
     name: "名字",
     title: "职位",
     link: "跳转链接，对应mentors/*",
