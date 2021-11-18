@@ -13,7 +13,7 @@ const mentors = {
       name: '宋利兵',
       title: '高级技术专家',
       company: '阿里云',
-      link: '/mentors/songlibing'
+      link: 'mentors/songlibing'
     },
     {
       avatar: "img/mentors/penglixun.jpg",
