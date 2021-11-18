@@ -1,6 +1,6 @@
 ---
 title: Plinux | 彭立勋
-tags: [阿里云, 3306π深圳站2021]
+tags: [华为云, 3306π深圳站2021]
 ---
 
 ![](https://3306pai-1255499614.cos.ap-guangzhou.myqcloud.com/sz2021/%E5%BD%AD%E7%AB%8B%E5%8B%8B.jpg)
