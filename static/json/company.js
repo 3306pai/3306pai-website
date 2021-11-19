@@ -1,4 +1,4 @@
-const mentors = {
+const company = {
   comment: {
     _comment: "这是赞助商和主办方的数据",
     title: "公司名称",
@@ -47,4 +47,4 @@ const mentors = {
     },
   ]
 }
-export default mentors;
+export default company;

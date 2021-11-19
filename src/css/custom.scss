@@ -1,5 +1,4 @@
 /*import global scss*/
-@import "./font.scss";
 @import "./_iconfont.scss";
 /* You can override the default Infima variables here. */
 :root {
@@ -114,7 +113,6 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   display: flex;
   .navbar__item{
     font-size: 16px;
-    font-family: PingFangSCRegular;
     margin-right: 80px;
     text-decoration: underline;
     &:last-child{

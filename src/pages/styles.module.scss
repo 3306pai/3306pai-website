@@ -184,7 +184,7 @@
         .manImage{
           width: mpx(200);
           right: 0;
-          top: 0;
+          bottom: mpx(10);
         }
       }
     }
@@ -293,3 +293,11 @@ table thead tr {
   font-size: 24px;
 }
 
+@include media{
+  table thead tr{
+    font-size: mpx(14);
+  }
+  table tbody tr td{
+    font-size: mpx(12);
+  }
+}
