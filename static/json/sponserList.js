@@ -26,9 +26,9 @@ const sponser = {
       description: 'Databend is an elastic and reliable Serverless Data Warehouse, offers Blazing Fast Query and combines Elasticity, Simplicity, Low cost of the Cloud, built to make the Data Cloud easy.'
     },
     {
-      title: "RadonDB",
-      logo: require('@site/static/img/sponsor/radonDb.png').default,
-      description: 'RadonDB is a cloud-native database based on MySQL. It’s architected to fully distributed cluster that delivering unlimited scalability (scale-out), capacity and performance. It supports distributed transaction capability for high data consistency, and leverage MySQL as storage engine with trusted data reliability. RadonDB is compatible with MySQL protocol, at mean time supports automatic table sharding, that simplifying the maintenance and opera-tion workflow.'
+      title: "青云科技",
+      logo: require('@site/static/img/sponsor/qingcloud.png').default,
+      description: '北京青云科技股份有限公司（股票代码 688316）成立于 2012 年 4 月，是一家技术领先的企业级 ICT 服务商与数字化转型解决方案提供商，致力于通过一套自主创新、中立可靠、灵活开放的全维云平台为数字世界的高效运行提供坚实的基础支撑，加速推动百行千业数字化转型。RadonDB 数据库系列产品上线 7 年服务上千家企业及社区用户，可基于云平台与 Kubernetes 容器平台交付，不仅提供覆盖多场景的数据库产品解决方案，而且提供专业的集群管理和自动化运维能力。帮助企业及社区用户大幅度提升业务开发与价值创新的效率！'
     },
   ]
 }
