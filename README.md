@@ -6,7 +6,7 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
   - blog: 博客
   - docs: 文档
   - mentors: 邀请嘉宾
-  - mettings: 会议
+  - meeting: 会议
   - static/json: mock数据
 
  

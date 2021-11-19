@@ -46,10 +46,10 @@ const config = {
       '@docusaurus/plugin-content-docs',
       /** @type {import('@docusaurus/plugin-content-docs').Options} */
       ({
-        id: 'metting',
-        path: 'metting',
-        routeBasePath: 'metting',
-        sidebarPath: require.resolve('./sidebarsMetting.js'),
+        id: 'meeting',
+        path: 'meeting',
+        routeBasePath: 'meeting',
+        sidebarPath: require.resolve('./sidebarsMeeting.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       }),
@@ -80,7 +80,7 @@ const config = {
             label: '首页',
             activeBaseRegex: '^/$',
           },
-          {to: '/metting/3306pai-sz-2021', label: '会议', position: 'left'},
+          {to: '/meeting/3306pai-sz-2021', label: '会议', position: 'left'},
           {to: '/sponser', label: '赞助商', position: 'left'},
           {to: '/blog/databend-architecture', label: 'Blog', position: 'left'},
           {
