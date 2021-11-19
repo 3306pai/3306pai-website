@@ -8,6 +8,10 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
   - mentors: 邀请嘉宾
   - mettings: 会议
   - static/json: mock数据
+  
+## 关于 blog 投稿
+  可以 fork 项目后，提交 markdown 格式到 Blog 目录下，本地 yarn start 测试通过，就可以 request 主项目。
+
 ### Installation
 
 ```
@@ -30,5 +34,8 @@ $ yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+
+
 
 
