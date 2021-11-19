@@ -29,9 +29,9 @@ const company = {
       link: 'https://databend.com/'
     },
     {
-      title: "RadonDB",
-      logo: require('@site/static/img/home/radonDB.png').default,
-      link: 'https://radondb.io/'
+      title: "青云科技",
+      logo: require('@site/static/img/home/qingcloud.png').default,
+      link: 'https://www.qingcloud.com'
     },
   ],
   hostData: [
