@@ -27,7 +27,7 @@ const sponser = {
     },
     {
       title: "RadonDB",
-      logo: require('@site/static/img/sponsor/radonDB.png').default,
+      logo: require('@site/static/img/sponsor/radonDb.png').default,
       description: 'RadonDB is a cloud-native database based on MySQL. It’s architected to fully distributed cluster that delivering unlimited scalability (scale-out), capacity and performance. It supports distributed transaction capability for high data consistency, and leverage MySQL as storage engine with trusted data reliability. RadonDB is compatible with MySQL protocol, at mean time supports automatic table sharding, that simplifying the maintenance and opera-tion workflow.'
     },
   ]
