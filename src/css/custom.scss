@@ -27,6 +27,12 @@
   --ifm-menu-color-active: #F8BA74;
   --ifm-code-font-size: 95%;
 }
+.theme-doc-footer{
+  margin-top: 15px;
+  @include media{
+    margin-top: (mpx(14));
+  }
+}
 .dropdown__link:hover, .dropdown__link--active {
   background-color: #FEF2E5;
   color: #FC9015;
