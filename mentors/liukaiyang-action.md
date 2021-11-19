@@ -5,8 +5,6 @@ tags: [爱可生, 3306π深圳站2021]
 ---
 ![](https://3306pai-1255499614.cos.ap-guangzhou.myqcloud.com/sz2021/%E5%88%98%E5%BC%80%E6%B4%8B.jpg)
 
-# 刘开洋
-
 *职位*  技术工程师
 
 *公司* 爱可生
