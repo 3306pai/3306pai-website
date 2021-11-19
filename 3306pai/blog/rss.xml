@@ -4,14 +4,14 @@
         <title>3306π Blog</title>
         <link>https://3306pai.cn/3306pai/blog</link>
         <description>3306π Blog</description>
-        <lastBuildDate>Thu, 18 Nov 2021 16:06:23 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 19 Nov 2021 02:33:38 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[Databend architecture]]></title>
             <link>https://3306pai.cn/3306pai/blog/databend-architecture</link>
             <guid>Databend architecture</guid>
-            <pubDate>Thu, 18 Nov 2021 16:06:23 GMT</pubDate>
+            <pubDate>Fri, 19 Nov 2021 02:33:38 GMT</pubDate>
             <description><![CDATA[Databend 是一个开源的、完全面向云架构的新式数仓，它提供快速的弹性扩展能力，并结合云的弹性、简单性和低成本，使 Data Cloud 构建变得更加容易。]]></description>
             <content:encoded><![CDATA[<p>Databend 是一个开源的、完全面向云架构的新式数仓，它提供快速的弹性扩展能力，并结合云的弹性、简单性和低成本，使 Data Cloud 构建变得更加容易。
 Databend 把数据存储在像 AWS S3 ，Azure Blob 这些云上的存储系统，可以使不同的计算节点挂载同一份数据，从而做到较高的弹性，实现对资源的精细化控制。
