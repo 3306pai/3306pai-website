@@ -1,5 +1,12 @@
 # 技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应
 
+---
+title: 技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应
+author: 叶金荣
+keywords: [Linux, MySQL, InnoDB]
+---
+
+## 导读
 > 一文快速掌握 MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程的对应关系。
 
 有时候，怀疑某个MySQL内存查询导致CPU或磁盘I/O消耗特别高，但又不确定具体是哪个SQL引起的。
@@ -22,7 +29,7 @@ InnoDB: about forcing recovery.
 
 不过本文想讨论的是，MySQL的进程ID、内部查询ID、内部线程ID，和操作系统层的进程ID、线程如何对应起来。
 
-**1、操作系统进程ID**
+## 1、操作系统进程ID
 MySQL是一个单进程多线程的服务程序，用 `ps -ef|grep mysqld` 就能看到其系统进程ID了。另外，当 `my.cnf` 配置文件中增加一行 `innodb_status_file = 1` 时，也会生成带有系统进程ID的innodb status 文件
 ```
 [root@yejr.run]# ps -ef | grep mysqld
@@ -36,7 +43,7 @@ mysql    38801     1  0 Jun13 ?        00:03:30 /usr/local/GreatSQL-8.0.22/bin/m
 Standard Monitor output is limited to 1MB when produced using the SHOW ENGINE INNODB STATUS statement. This limit does not apply to output written to server standard error output (stderr).
 ```
 
-**2、系统线程和MySQL连接ID、查询ID等的关系**
+## 2、系统线程和MySQL连接ID、查询ID等的关系
 从MySQL 5.7开始，`performance_schema.threads` 表增加 `THREAD_OS_ID` 列，用于记录MySQL内部线程对应的系统线程ID。
 
 创建一个新连接，并执行下面的SQL：
@@ -179,7 +186,7 @@ Last time write locked in file /export/home/pb2/build/sb_0-34537258-1560179931.8
 
 Enjoy MySQL :)
 
-## 延伸阅读 
+## 延伸阅读
 - 15.17.3 InnoDB Standard Monitor and Lock Monitor Output, https://dev.mysql.com/doc/refman/8.0/en/innodb-standard-monitor.html
 - 27.12.21.6 The threads Table, https://dev.mysql.com/doc/refman/8.0/en/performance-schema-threads-table.html
 - 27.12.6.1 The events_statements_current Table, https://dev.mysql.com/doc/refman/8.0/en/performance-schema-events-statements-current-table.html
