@@ -4,14 +4,14 @@
         <title>3306π Blog</title>
         <link>https://3306pai.cn/blog</link>
         <description>3306π Blog</description>
-        <lastBuildDate>Mon, 22 Nov 2021 01:51:12 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Nov 2021 01:55:23 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[Databend architecture]]></title>
             <link>https://3306pai.cn/blog/databend-architecture</link>
             <guid>Databend architecture</guid>
-            <pubDate>Mon, 22 Nov 2021 01:51:12 GMT</pubDate>
+            <pubDate>Mon, 22 Nov 2021 01:55:23 GMT</pubDate>
             <description><![CDATA[Databend 是一个开源的、完全面向云架构的新式数仓，它提供快速的弹性扩展能力，并结合云的弹性、简单性和低成本，使 Data Cloud 构建变得更加容易。]]></description>
             <content:encoded><![CDATA[<p>Databend 是一个开源的、完全面向云架构的新式数仓，它提供快速的弹性扩展能力，并结合云的弹性、简单性和低成本，使 Data Cloud 构建变得更加容易。
 Databend 把数据存储在像 AWS S3 ，Azure Blob 这些云上的存储系统，可以使不同的计算节点挂载同一份数据，从而做到较高的弹性，实现对资源的精细化控制。
@@ -54,11 +54,9 @@ sparse.idx 以 N 条记录为颗粒度的稀疏索引
             <title><![CDATA[技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应]]></title>
             <link>https://3306pai.cn/blog/howto-find-out-os-mysql-innodb-thread</link>
             <guid>技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应</guid>
-            <pubDate>Mon, 22 Nov 2021 01:51:12 GMT</pubDate>
+            <pubDate>Mon, 22 Nov 2021 01:55:23 GMT</pubDate>
             <description><![CDATA[---]]></description>
-            <content:encoded><![CDATA[<hr/><p>title: &quot;技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应&quot;
-author:</p><ul><li>&quot;叶金荣&quot;
-keywords:</li><li>Linux</li><li>MySQL</li><li>InnoDB</li></ul><hr/><h2>导读</h2><blockquote><p>一文快速掌握 MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程的对应关系。</p></blockquote><p>有时候，怀疑某个MySQL内存查询导致CPU或磁盘I/O消耗特别高，但又不确定具体是哪个SQL引起的。</p><p>或者当InnoDB引擎内部有semaphore wait时，想知道具体是哪个线程/查询引起的。多说一下，当有semaphore wait事件超过600秒的话，InnoDB会发出crash信号：</p><pre><code>InnoDB: ###### Diagnostic info printed to the standard error stream
+            <content:encoded><![CDATA[<hr/><ul><li>title: &quot;技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应&quot;</li><li>author:<ul><li>&quot;叶金荣&quot;</li></ul></li><li>keywords:<ul><li>Linux</li><li>MySQL</li><li>InnoDB</li></ul></li></ul><hr/><h2>导读</h2><blockquote><p>一文快速掌握 MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程的对应关系。</p></blockquote><p>有时候，怀疑某个MySQL内存查询导致CPU或磁盘I/O消耗特别高，但又不确定具体是哪个SQL引起的。</p><p>或者当InnoDB引擎内部有semaphore wait时，想知道具体是哪个线程/查询引起的。多说一下，当有semaphore wait事件超过600秒的话，InnoDB会发出crash信号：</p><pre><code>InnoDB: ###### Diagnostic info printed to the standard error stream
 2020-12-13T09:41:33.810011Z 0 [ERROR] [FATAL] InnoDB: Semaphore wait has lasted &gt; 600 seconds. We intentionally crash the server because it appears to be hung.
 2020-12-13 10:41:33 0x7f3d92a4e700 InnoDB: Assertion failure in thread 139902430013184 in file ut0ut.cc line 917
 InnoDB: We intentionally generate a memory trap.
