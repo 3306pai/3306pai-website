@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://3306pai.cn/blog</id>
     <title>3306π Blog</title>
-    <updated>2021-11-22T01:26:51.945Z</updated>
+    <updated>2021-11-22T01:35:01.011Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://3306pai.cn/blog"/>
     <subtitle>3306π Blog</subtitle>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[Databend architecture]]></title>
         <id>Databend architecture</id>
         <link href="https://3306pai.cn/blog/databend-architecture"/>
-        <updated>2021-11-22T01:26:51.945Z</updated>
+        <updated>2021-11-22T01:35:01.011Z</updated>
         <summary type="html"><![CDATA[Databend 是一个开源的、完全面向云架构的新式数仓，它提供快速的弹性扩展能力，并结合云的弹性、简单性和低成本，使 Data Cloud 构建变得更加容易。]]></summary>
         <content type="html"><![CDATA[<p>Databend 是一个开源的、完全面向云架构的新式数仓，它提供快速的弹性扩展能力，并结合云的弹性、简单性和低成本，使 Data Cloud 构建变得更加容易。
 Databend 把数据存储在像 AWS S3 ，Azure Blob 这些云上的存储系统，可以使不同的计算节点挂载同一份数据，从而做到较高的弹性，实现对资源的精细化控制。
@@ -54,9 +54,10 @@ sparse.idx 以 N 条记录为颗粒度的稀疏索引
         <title type="html"><![CDATA[技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应]]></title>
         <id>技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应</id>
         <link href="https://3306pai.cn/blog/howto-find-out-os-mysql-innodb-thread"/>
-        <updated>2021-11-22T01:26:51.945Z</updated>
-        <summary type="html"><![CDATA[一文快速掌握 MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程的对应关系。]]></summary>
-        <content type="html"><![CDATA[<blockquote><p>一文快速掌握 MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程的对应关系。</p></blockquote><p>有时候，怀疑某个MySQL内存查询导致CPU或磁盘I/O消耗特别高，但又不确定具体是哪个SQL引起的。</p><p>或者当InnoDB引擎内部有semaphore wait时，想知道具体是哪个线程/查询引起的。多说一下，当有semaphore wait事件超过600秒的话，InnoDB会发出crash信号：</p><pre><code>InnoDB: ###### Diagnostic info printed to the standard error stream
+        <updated>2021-11-22T01:35:01.011Z</updated>
+        <summary type="html"><![CDATA[---]]></summary>
+        <content type="html"><![CDATA[<hr/><p>title: 技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应
+author: 叶金荣</p><h2>keywords: <!-- -->[Linux, MySQL, InnoDB]</h2><h2>导读</h2><blockquote><p>一文快速掌握 MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程的对应关系。</p></blockquote><p>有时候，怀疑某个MySQL内存查询导致CPU或磁盘I/O消耗特别高，但又不确定具体是哪个SQL引起的。</p><p>或者当InnoDB引擎内部有semaphore wait时，想知道具体是哪个线程/查询引起的。多说一下，当有semaphore wait事件超过600秒的话，InnoDB会发出crash信号：</p><pre><code>InnoDB: ###### Diagnostic info printed to the standard error stream
 2020-12-13T09:41:33.810011Z 0 [ERROR] [FATAL] InnoDB: Semaphore wait has lasted &gt; 600 seconds. We intentionally crash the server because it appears to be hung.
 2020-12-13 10:41:33 0x7f3d92a4e700 InnoDB: Assertion failure in thread 139902430013184 in file ut0ut.cc line 917
 InnoDB: We intentionally generate a memory trap.
@@ -67,15 +68,13 @@ InnoDB: corruption in the InnoDB tablespace. Please refer to
 InnoDB: http://dev.mysql.com/doc/refman/8.0/en/forcing-innodb-recovery.html
 InnoDB: about forcing recovery.
 09:41:33 UTC - mysqld got signal 6 ;
-</code></pre><p>因此也要监控InnoDB的semaphore wait状态，一旦超过阈值，就要尽快报警并分析出问题原因，及时杀掉或停止引起等待的查询请求。</p><p>不过本文想讨论的是，MySQL的进程ID、内部查询ID、内部线程ID，和操作系统层的进程ID、线程如何对应起来。</p><p><strong>1、操作系统进程ID</strong>
-MySQL是一个单进程多线程的服务程序，用 <code>ps -ef|grep mysqld</code> 就能看到其系统进程ID了。另外，当 <code>my.cnf</code> 配置文件中增加一行 <code>innodb_status_file = 1</code> 时，也会生成带有系统进程ID的innodb status 文件</p><pre><code>[root@yejr.run]# ps -ef | grep mysqld
+</code></pre><p>因此也要监控InnoDB的semaphore wait状态，一旦超过阈值，就要尽快报警并分析出问题原因，及时杀掉或停止引起等待的查询请求。</p><p>不过本文想讨论的是，MySQL的进程ID、内部查询ID、内部线程ID，和操作系统层的进程ID、线程如何对应起来。</p><h2>1、操作系统进程ID</h2><p>MySQL是一个单进程多线程的服务程序，用 <code>ps -ef|grep mysqld</code> 就能看到其系统进程ID了。另外，当 <code>my.cnf</code> 配置文件中增加一行 <code>innodb_status_file = 1</code> 时，也会生成带有系统进程ID的innodb status 文件</p><pre><code>[root@yejr.run]# ps -ef | grep mysqld
 mysql    38801     1  0 Jun13 ?        00:03:30 /usr/local/GreatSQL-8.0.22/bin/mysqld --defaults-file=/mysql/data06/my.cnf
 
 [root@yejr.run]# ls -la innodb_status.38801
 -rw-r----- 1 mysql mysql 4906 Jun 14 14:26 innodb_status.38801
 </code></pre><p>文件 <code>innodb_status.pid</code> 的作用是每隔15秒左右输出innodb引擎各种状态信息，和执行 <code>SHOW ENGINE INNODB STATUS</code> 的作用相同。 二者的区别在于，前者（文件输出方式）的输出内容长度不受限制，而后者（命令行输出）则最多只显示1MB内容，更多的会被截断。所以务必设置 <code>innodb_status_file = 1</code> 选项。</p><pre><code>Standard Monitor output is limited to 1MB when produced using the SHOW ENGINE INNODB STATUS statement. This limit does not apply to output written to server standard error output (stderr).
-</code></pre><p><strong>2、系统线程和MySQL连接ID、查询ID等的关系</strong>
-从MySQL 5.7开始，<code>performance_schema.threads</code> 表增加 <code>THREAD_OS_ID</code> 列，用于记录MySQL内部线程对应的系统线程ID。</p><p>创建一个新连接，并执行下面的SQL：</p><pre><code>[root@yejr.run]# mysql -S./mysql.sock -uroot -p mymgr
+</code></pre><h2>2、系统线程和MySQL连接ID、查询ID等的关系</h2><p>从MySQL 5.7开始，<code>performance_schema.threads</code> 表增加 <code>THREAD_OS_ID</code> 列，用于记录MySQL内部线程对应的系统线程ID。</p><p>创建一个新连接，并执行下面的SQL：</p><pre><code>[root@yejr.run]# mysql -S./mysql.sock -uroot -p mymgr
 ...
 # 查到MySQL的连接ID是25（PROCESSLIST_ID = 25）
 [root@yejr.run] [none]&gt; show processlist;
