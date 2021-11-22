@@ -1,9 +1,15 @@
 ---
-title: "技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应"  #标题
+title: 技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应 #标题
+description:  如何快速找出操作系统、MySQL进程、连接ID、查询ID、InnoDB内部线程ID之间的关系
 slug: howto-find-out-os-mysql-innodb-thread #链接
-tags: [Linux,MySQL,InnoDB]
 hide_table_of_contents: false
+tags: [MySQL]
+authors:
+  - name: 叶金荣
+    title: 万里数据库开源生态负责人，Oracle MySQL ACE Director，腾讯云TVP成员
+    url: https://imysql.com
 ---
+
 ## 导读
 > 一文快速掌握 MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程的对应关系。
 
