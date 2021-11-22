@@ -5,7 +5,8 @@ slug: databend-architecture #链接
 authors:
   - name: BohuTang
     title: Co-creator of Databend
-    url: https://github.com/BohuTANG
+    url: https://bohutang.me
+    image_url: https://avatars.githubusercontent.com/u/172204?v=4
 tags: [Databend]
 hide_table_of_contents: false
 ---
