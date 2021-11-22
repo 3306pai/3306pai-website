@@ -8,6 +8,7 @@ authors:
   - name: 叶金荣
     title: 万里数据库开源生态负责人，Oracle MySQL ACE Director，腾讯云TVP成员
     url: https://imysql.com
+    image_url: https://avatars.githubusercontent.com/u/5210512?v=4
 ---
 
 ## 导读
