@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://3306pai.cn/blog</id>
     <title>3306π Blog</title>
-    <updated>2021-11-19T10:07:00.952Z</updated>
+    <updated>2021-11-22T01:17:34.098Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://3306pai.cn/blog"/>
     <subtitle>3306π Blog</subtitle>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[Databend architecture]]></title>
         <id>Databend architecture</id>
         <link href="https://3306pai.cn/blog/databend-architecture"/>
-        <updated>2021-11-19T10:07:00.952Z</updated>
+        <updated>2021-11-22T01:17:34.098Z</updated>
         <summary type="html"><![CDATA[Databend 是一个开源的、完全面向云架构的新式数仓，它提供快速的弹性扩展能力，并结合云的弹性、简单性和低成本，使 Data Cloud 构建变得更加容易。]]></summary>
         <content type="html"><![CDATA[<p>Databend 是一个开源的、完全面向云架构的新式数仓，它提供快速的弹性扩展能力，并结合云的弹性、简单性和低成本，使 Data Cloud 构建变得更加容易。
 Databend 把数据存储在像 AWS S3 ，Azure Blob 这些云上的存储系统，可以使不同的计算节点挂载同一份数据，从而做到较高的弹性，实现对资源的精细化控制。
@@ -49,5 +49,167 @@ sparse.idx 以 N 条记录为颗粒度的稀疏索引
 假设有两个Parquet 文件：f1, f2，f1 的 min_max.idx: <!-- -->[3, 5]<!-- --> ；f2 的 min_max.idx: <!-- -->[4, 6]<!-- --> 。如果查询条件为：where x &lt; 4 ， 我们只需要 f1 文件就可以，再根据 sparse.idx 索引定位到 f1 文件中的某个数据页。</p><h2>项目地址</h2><p>代码地址：
 <a href="https://github.com/datafuselabs/databend">https://github.com/datafuselabs/databend</a></p><p>项目官网：
 <a href="https://datafuse.rs">https://datafuse.rs</a></p><p>想了解我们更多可以关注公众号： Databend .</p>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数据库索引总结：模型数空运最快]]></title>
+        <id>数据库索引总结：模型数空运最快</id>
+        <link href="https://3306pai.cn/blog/2021/11/22/songhua"/>
+        <updated>2021-11-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[大家好，我是知数堂SQL 优化班老师 网名：骑龟的兔子]]></summary>
+        <content type="html"><![CDATA[<p>大家好，我是知数堂SQL 优化班老师 网名：骑龟的兔子</p><p>我今天刷头条的时候 看到了一位叫《老猿说开发》总结的索引不能使用口诀
+模型数空运最快</p><p>我觉得挺好，但是因为没有具体的案例，还有没说是哪个数据库这些需要完善的地方，所以写一篇文章。</p><p>模：模糊查询%在前面情况不能使用索引，这种情况非得说一个特例就是不回表情况</p><pre><code>root@mysql3306.sock&gt;[employees]&gt;desc select dept_no from t_group2 where dept_no like &#x27;%005&#x27;;
++----+-------------+----------+------------+-------+---------------+-------------+---------+------+------+----------+--------------------------+
+| id | select_type | table    | partitions | type  | possible_keys | key         | key_len | ref  | rows | filtered | Extra                    |
++----+-------------+----------+------------+-------+---------------+-------------+---------+------+------+----------+--------------------------+
+|  1 | SIMPLE      | t_group2 | NULL       | index | NULL          | ix_dept_no2 | 16      | NULL |   10 |    11.11 | Using where; Using index |
++----+-------------+----------+------------+-------+---------------+-------------+---------+------+------+----------+--------------------------+
+</code></pre><p>型：数据类型有变化的时候不能使用</p><pre><code>root@mysql3306.sock&gt;[employees]&gt;desc test1 ;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | varchar(10) | YES  | MUL | NULL    |       |
+| n     | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+</code></pre><pre><code>root@mysql3306.sock&gt;[employees]&gt;select * from test1 ;
++------+------+
+| id   | n    |
++------+------+
+| 1000 | NULL |
+| NULL | NULL |
++------+------+
+2 rows in set (0.00 sec)
+
+root@mysql3306.sock&gt;[employees]&gt;show index from test1 ;
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| test1 |          1 | ix_id    |            1 | id          | A         |           2 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+1 row in set (0.01 sec)
+
+root@mysql3306.sock&gt;[employees]&gt;desc select * from test1 where id=1000;
++----+-------------+-------+------------+------+---------------+------+---------+------+------+----------+-------------+
+| id | select_type | table | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra       |
++----+-------------+-------+------------+------+---------------+------+---------+------+------+----------+-------------+
+|  1 | SIMPLE      | test1 | NULL       | ALL  | ix_id         | NULL | NULL    | NULL |    2 |    50.00 | Using where |
++----+-------------+-------+------------+------+---------------+------+---------+------+------+----------+-------------+
+1 row in set, 3 warnings (0.00 sec)
+
+root@mysql3306.sock&gt;[employees]&gt;desc select * from test1 where id=&#x27;1000&#x27;;
++----+-------------+-------+------------+------+---------------+-------+---------+-------+------+----------+-------+
+| id | select_type | table | partitions | type | possible_keys | key   | key_len | ref   | rows | filtered | Extra |
++----+-------------+-------+------------+------+---------------+-------+---------+-------+------+----------+-------+
+|  1 | SIMPLE      | test1 | NULL       | ref  | ix_id         | ix_id | 43      | const |    1 |   100.00 | NULL  |
++----+-------------+-------+------------+------+---------------+-------+---------+-------+------+----------+-------+
+1 row in set, 1 warning (0.01 sec)
+</code></pre><p>数：索引列套用函数不能使用索引，这时候mysql 5.7可以用虚拟列，8.0可以直接使用函数索引，5.6的时候可以利用类似解方程方法解开</p><pre><code>root@mysql3306.sock&gt;[employees]&gt;desc select * from test1 where id=&#x27;1000&#x27;;
++----+-------------+-------+------------+------+---------------+-------+---------+-------+------+----------+-------+
+| id | select_type | table | partitions | type | possible_keys | key   | key_len | ref   | rows | filtered | Extra |
++----+-------------+-------+------------+------+---------------+-------+---------+-------+------+----------+-------+
+|  1 | SIMPLE      | test1 | NULL       | ref  | ix_id         | ix_id | 43      | const |    1 |   100.00 | NULL  |
++----+-------------+-------+------------+------+---------------+-------+---------+-------+------+----------+-------+
+1 row in set, 1 warning (0.01 sec)
+
+root@mysql3306.sock&gt;[employees]&gt;desc select * from test1 where concat(id,&#x27;&#x27;)=&#x27;1000&#x27;;
++----+-------------+-------+------------+------+---------------+------+---------+------+------+----------+-------------+
+| id | select_type | table | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra       |
++----+-------------+-------+------------+------+---------------+------+---------+------+------+----------+-------------+
+|  1 | SIMPLE      | test1 | NULL       | ALL  | NULL          | NULL | NULL    | NULL |    2 |   100.00 | Using where |
++----+-------------+-------+------------+------+---------------+------+---------+------+------+----------+-------------+
+1 row in set, 1 warning (0.00 sec)
+root@mysql3306.sock&gt;[employees]&gt;create index idx_t1_ke1 on test1((concat(id,&#x27;&#x27;)));
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+root@mysql3306.sock&gt;[employees]&gt;desc select * from test1 where concat(id,&#x27;&#x27;)=&#x27;1000&#x27;;
++----+-------------+-------+------------+------+---------------+------------+---------+-------+------+----------+-------+
+| id | select_type | table | partitions | type | possible_keys | key        | key_len | ref   | rows | filtered | Extra |
++----+-------------+-------+------------+------+---------------+------------+---------+-------+------+----------+-------+
+|  1 | SIMPLE      | test1 | NULL       | ref  | idx_t1_ke1    | idx_t1_ke1 | 43      | const |    1 |   100.00 | NULL  |
++----+-------------+-------+------------+------+---------------+------------+---------+-------+------+----------+-------+
+1 row in set, 1 warning (0.00 sec)
+</code></pre><p>空：索引列有空值使用is null 就不能使用索引，这个在oracle 是没问题的
+但是在mysql 这个是错的</p><pre><code>root@mysql3306.sock&gt;[employees]&gt;desc test1 ;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | varchar(10) | YES  | MUL | NULL    |       |
+| n     | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+root@mysql3306.sock&gt;[employees]&gt;select * from test1 ;
++------+------+
+| id   | n    |
++------+------+
+| 1000 | NULL |
+| NULL | NULL |
++------+------+
+2 rows in set (0.00 sec)
+
+root@mysql3306.sock&gt;[employees]&gt;show index from test1 ;
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| test1 |          1 | ix_id    |            1 | id          | A         |           2 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+1 row in set (0.01 sec)
+
+root@mysql3306.sock&gt;[employees]&gt;desc select * from test1 where id is null;
++----+-------------+-------+------------+------+---------------+-------+---------+-------+------+----------+-----------------------+
+| id | select_type | table | partitions | type | possible_keys | key   | key_len | ref   | rows | filtered | Extra                 |
++----+-------------+-------+------------+------+---------------+-------+---------+-------+------+----------+-----------------------+
+|  1 | SIMPLE      | test1 | NULL       | ref  | ix_id         | ix_id | 43      | const |    1 |   100.00 | Using index condition |
++----+-------------+-------+------------+------+---------------+-------+---------+-------+------+----------+-----------------------+
+1 row in set, 1 warning (0.00 sec)
+
+root@mysql3306.sock&gt;[employees]&gt;desc select * from test1 where id is not  null;
++----+-------------+-------+------------+-------+---------------+-------+---------+------+------+----------+-----------------------+
+| id | select_type | table | partitions | type  | possible_keys | key   | key_len | ref  | rows | filtered | Extra                 |
++----+-------------+-------+------------+-------+---------------+-------+---------+------+------+----------+-----------------------+
+|  1 | SIMPLE      | test1 | NULL       | range | ix_id         | ix_id | 43      | NULL |    1 |   100.00 | Using index condition |
++----+-------------+-------+------------+-------+---------------+-------+---------+------+------+----------+-----------------------+
+1 row in set, 1 warning (0.00 sec)
+</code></pre><p>运：索引列有数字运算的时候不能使用索引</p><pre><code>root@mysql3306.sock&gt;[employees]&gt;desc select * from test1 where id=&#x27;1000&#x27;;
++----+-------------+-------+------------+------+---------------+-------+---------+-------+------+----------+-------+
+| id | select_type | table | partitions | type | possible_keys | key   | key_len | ref   | rows | filtered | Extra |
++----+-------------+-------+------------+------+---------------+-------+---------+-------+------+----------+-------+
+|1| SIMPLE      | test1 | NULL       | ref  | ix_id         | ix_id | 43      | const |    1 |100.00| NULL  |
++----+-------------+-------+------------+------+---------------+-------+---------+-------+------+----------+-------+
+1 row in set, 1 warning (0.00 sec)
+
+root@mysql3306.sock&gt;[employees]&gt;desc select * from test1 where id+0=&#x27;1000&#x27;;
++----+-------------+-------+------------+------+---------------+------+---------+------+------+----------+-------------+
+| id | select_type | table | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra       |
++----+-------------+-------+------------+------+---------------+------+---------+------+------+----------+-------------+
+|1| SIMPLE      | test1 | NULL       | ALL  | NULL          | NULL | NULL    | NULL |    2 |100.00| Using where |
++----+-------------+-------+------------+------+---------------+------+---------+------+------+----------+-------------+
+1 row in set, 1 warning (0.00 sec)
+</code></pre><p>最：复合索引，最左边原则，这个也需要分情况分版本，因为有skip index的存在</p><pre><code>root@mysql3306.sock&gt;[employees]&gt;show index from dept_emp2 ;
++-----------+------------+-------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table     | Non_unique | Key_name    | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++-----------+------------+-------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| dept_emp2 |          1 | ix_dept_emp |            1 | dept_no     | A         |           8 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| dept_emp2 |          1 | ix_dept_emp |            2 | emp_no      | A         |      315555 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
++-----------+------------+-------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+2 rows in set (0.00 sec)
+root@mysql3306.sock&gt;[employees]&gt;desc select * from dept_emp2 where emp_no=10001 limit 10 ;
++----+-------------+-----------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+| id | select_type | table     | partitions | type | possible_keys | key  | key_len | ref  | rows   | filtered | Extra       |
++----+-------------+-----------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+|  1 | SIMPLE      | dept_emp2 | NULL       | ALL  | NULL          | NULL | NULL    | NULL | 331008 |    10.00 | Using where |
++----+-------------+-----------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+1 row in set, 1 warning (0.00 sec)
+
+root@mysql3306.sock&gt;[employees]&gt;desc select emp_no,dept_no from dept_emp2 where emp_no=10001 limit 10 ;
++----+-------------+-----------+------------+-------+---------------+-------------+---------+------+-------+----------+----------------------------------------+
+| id | select_type | table     | partitions | type  | possible_keys | key         | key_len | ref  | rows  | filtered | Extra                                  |
++----+-------------+-----------+------------+-------+---------------+-------------+---------+------+-------+----------+----------------------------------------+
+|  1 | SIMPLE      | dept_emp2 | NULL       | range | ix_dept_emp   | ix_dept_emp | 20      | NULL | 33100 |   100.00 | Using where; Using index for skip scan |
++----+-------------+-----------+------------+-------+---------------+-------------+---------+------+-------+----------+----------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+</code></pre><p>快：如果优化器认为使用全表比使用索引快，那就不会使用索引，说白了就是基于优化器或者统计信息，这个就是所谓的百分比，这里最重要的一点是使用索引一般情况下是回表，也就是发生随机IO,这个随着回表的量的大小变大，一般OLTP都是在表下查询少量数据情况，所以还是使用索引的情况会好</p><p>当然上面的情况之外，还有别的情况，如日期类型，还有字符串比较的时候等等，这些在课堂中有详细的解答。
+我是知数堂SQL 优化班老师~ ^^</p><p>最新一期SQL优化课，在12月份开始。</p><p>如有关于SQL优化方面疑问和一起交流的请加 并且 @兔子@知数堂SQL优化</p><p>高性能MySQL,SQL优化群 有叶金荣，吴炳锡 两位大神坐镇 ：579036588</p><p>欢迎加入 知数堂大家庭。</p><p>我的微信公众号：SQL开发与优化(sqlturning)</p>]]></content>
     </entry>
 </feed>
