@@ -10,7 +10,7 @@
     - InnoDB
 
 ---
-
+<!--truncate-->
 ## 导读
 > 一文快速掌握 MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程的对应关系。
 
