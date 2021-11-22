@@ -27,7 +27,7 @@
   --ifm-menu-color-active: #F8BA74;
   --ifm-code-font-size: 95%;
 }
-.theme-doc-footer{
+.theme-doc-footer, .docusaurus-mt-lg{
   margin-top: 15px;
   @include media{
     margin-top: (mpx(14));

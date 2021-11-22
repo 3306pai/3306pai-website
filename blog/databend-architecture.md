@@ -1,3 +1,20 @@
+---
+title: Databend architecture  #标题
+description: This is my first post on Docusaurus 2. #描述
+slug: databend-architecture #链接
+authors:
+  - name: 张三 
+    title: Co-creator of Databend architecture
+    url: https://github.com/JoelMarcey
+    image_url: https://github.com/JoelMarcey.png
+tags: [Databend]
+image: https://i.imgur.com/mErPwqL.png
+hide_table_of_contents: false
+---
+Databend 是一个开源的、完全面向云架构的新式数仓，它提供快速的弹性扩展能力，并结合云的弹性、简单性和低成本，使 Data Cloud 构建变得更加容易。
+Databend 把数据存储在像 AWS S3 ，Azure Blob 这些云上的存储系统，可以使不同的计算节点挂载同一份数据，从而做到较高的弹性，实现对资源的精细化控制。
+
+<!--truncate-->
 # Databend architecture
 Databend 是一个开源的、完全面向云架构的新式数仓，它提供快速的弹性扩展能力，并结合云的弹性、简单性和低成本，使 Data Cloud 构建变得更加容易。
 Databend 把数据存储在像 AWS S3 ，Azure Blob 这些云上的存储系统，可以使不同的计算节点挂载同一份数据，从而做到较高的弹性，实现对资源的精细化控制。

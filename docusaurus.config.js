@@ -28,6 +28,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          blogSidebarCount: 'ALL',
           // Please change this to your repo.
           // editUrl:
           //   'https://github.com/facebook/docusaurus/edit/main/website/blog/',
@@ -81,8 +82,8 @@ const config = {
             activeBaseRegex: '^/$',
           },
           {to: '/meeting/3306pai-sz-2021', label: '会议', position: 'left'},
-          {to: '/sponser', label: '赞助商', position: 'left'},
-          {to: '/blog/databend-architecture', label: 'Blog', position: 'left'},
+          {to: 'sponser', label: '赞助商', position: 'left'},
+          {to: 'blog', label: 'Blog', position: 'left'},
           {
             type: 'dropdown',
             label: '资源',
