@@ -1,9 +1,13 @@
 # 技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应
 
 ---
+
 title: 技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应
+
 author: 叶金荣
+
 keywords: [Linux, MySQL, InnoDB]
+
 ---
 
 ## 导读
