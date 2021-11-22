@@ -3,8 +3,8 @@ title: Databend architecture  #标题
 description: This is my first post on Docusaurus 2. #描述
 slug: databend-architecture #链接
 authors:
-  - name: 张三 
-    title: Co-creator of Databend architecture
+  - name: 吴炳锡
+    title: Co-creator of Databend
     url: https://github.com/JoelMarcey
     image_url: https://github.com/JoelMarcey.png
 tags: [Databend]
