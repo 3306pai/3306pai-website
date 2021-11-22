@@ -1,16 +1,9 @@
-# 技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应
-
 ---
-- title: "技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应"
-- author:
-    - "叶金荣"
-- keywords:
-    - Linux
-    - MySQL
-    - InnoDB
-
+title: "技术分享 | MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程如何对应"  #标题
+slug: howto-find-out-os-mysql-innodb-thread #链接
+tags: [Linux,MySQL,InnoDB]
+hide_table_of_contents: false
 ---
-<!--truncate-->
 ## 导读
 > 一文快速掌握 MySQL进程号、连接ID、查询ID、InnoDB线程与系统线程的对应关系。
 
@@ -33,7 +26,7 @@ InnoDB: about forcing recovery.
 因此也要监控InnoDB的semaphore wait状态，一旦超过阈值，就要尽快报警并分析出问题原因，及时杀掉或停止引起等待的查询请求。
 
 不过本文想讨论的是，MySQL的进程ID、内部查询ID、内部线程ID，和操作系统层的进程ID、线程如何对应起来。
-
+<!--truncate-->
 ## 1、操作系统进程ID
 MySQL是一个单进程多线程的服务程序，用 `ps -ef|grep mysqld` 就能看到其系统进程ID了。另外，当 `my.cnf` 配置文件中增加一行 `innodb_status_file = 1` 时，也会生成带有系统进程ID的innodb status 文件
 ```

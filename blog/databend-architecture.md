@@ -1,20 +1,18 @@
 ---
 title: Databend architecture  #标题
-description: This is my first post on Docusaurus 2. #描述
+description:  Databend 整体架构 #描述
 slug: databend-architecture #链接
 authors:
-  - name: 吴炳锡
+  - name: BohuTang
     title: Co-creator of Databend
-    url: https://github.com/JoelMarcey
-    image_url: https://github.com/JoelMarcey.png
+    url: https://github.com/BohuTANG
 tags: [Databend]
-image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
+
 Databend 是一个开源的、完全面向云架构的新式数仓，它提供快速的弹性扩展能力，并结合云的弹性、简单性和低成本，使 Data Cloud 构建变得更加容易。
 Databend 把数据存储在像 AWS S3 ，Azure Blob 这些云上的存储系统，可以使不同的计算节点挂载同一份数据，从而做到较高的弹性，实现对资源的精细化控制。
 
-<!--truncate-->
 # Databend architecture
 Databend 是一个开源的、完全面向云架构的新式数仓，它提供快速的弹性扩展能力，并结合云的弹性、简单性和低成本，使 Data Cloud 构建变得更加容易。
 Databend 把数据存储在像 AWS S3 ，Azure Blob 这些云上的存储系统，可以使不同的计算节点挂载同一份数据，从而做到较高的弹性，实现对资源的精细化控制。
@@ -26,7 +24,7 @@ Databend 在设计上专注以下能力：
 * 成本 Databend 处理查询非常高效，用户只需要为使用的资源付费。
 
 ![](https://datafuse-1255499614.cos.ap-beijing.myqcloud.com/architecture_v1.png)
-
+<!--truncate-->
 上图是 Databend 的整体架构图，整个系统主要由三大部分组成：Meta service layer、Compute Layer 和 Storage Layer。
 ## 1、Meta Service Layer
 
