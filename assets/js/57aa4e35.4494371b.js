@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdatabend_official_front=self.webpackChunkdatabend_official_front||[]).push([[6010],{7500:function(a){a.exports=JSON.parse('{"allTagsPath":"/mentors/tags","slug":"/mentors/tags/3306-\u03c0\u6df1\u5733\u7ad9-2021","name":"3306\u03c0\u6df1\u5733\u7ad92021","count":9,"permalink":"/mentors/tags/3306-\u03c0\u6df1\u5733\u7ad9-2021"}')}}]);
