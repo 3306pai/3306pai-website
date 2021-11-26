@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>3306π Blog</title>
+        <link>https://3306pai.cn/mentors</link>
+        <description>3306π Blog</description>
+        <lastBuildDate>Fri, 26 Nov 2021 01:39:50 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[刘开洋 | 爱可生]]></title>
+            <link>https://3306pai.cn/mentors/liukaiyang-action</link>
+            <guid>liukaiyang-action</guid>
+            <pubDate>Fri, 26 Nov 2021 01:39:50 GMT</pubDate>
+            <description><![CDATA[职位:  技术工程师]]></description>
+            <content:encoded><![CDATA[<p><img src="https://3306pai-1255499614.cos.ap-guangzhou.myqcloud.com/sz2021/%E5%88%98%E5%BC%80%E6%B4%8B.jpg"/></p><p><strong>职位:</strong>  技术工程师</p><p><strong>公司:</strong> 爱可生</p><p><strong>个人简介:</strong> 供职于上海爱可生，从事数据库运维和产品交付，对数据库及周边有浓厚的学习兴趣，喜欢看书，追求技术。</p><h2>分享</h2><ul><li>2021年深圳站分享 <a href="http://hdxu.cn/FWy1R">《MySQL内存统计的分析与实践》</a></li></ul><h2>专访</h2><ul><li><a href="/blog/liukaiyang-interview">MySQL内存统计的分析与实践--刘开洋|爱可生</a></li></ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Plinux | 彭立勋]]></title>
+            <link>https://3306pai.cn/mentors/plinux</link>
+            <guid>Plinux | 彭立勋</guid>
+            <pubDate>Fri, 26 Nov 2021 01:39:50 GMT</pubDate>
+            <description><![CDATA[职位： 数据库首席架构师]]></description>
+            <content:encoded><![CDATA[<p><img src="https://3306pai-1255499614.cos.ap-guangzhou.myqcloud.com/sz2021/%E5%BD%AD%E7%AB%8B%E5%8B%8B.jpg"/></p><p><strong>职位：</strong> 数据库首席架构师</p><p><strong>公司：</strong> 华为</p><p><strong>个人简介：</strong> 华为云数据库首席架构师， MariaDB 基金会成员，Oracle MySQL ACE Director，知名 MySQL 内核开发者。。</p><h2>分享</h2><ul><li>2021年深圳站分享 <a href="http://hdxu.cn/FWy1R">《待定》</a></li></ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[宋利兵 | 阿里云]]></title>
+            <link>https://3306pai.cn/mentors/songlibing</link>
+            <guid>宋利兵 | 阿里云</guid>
+            <pubDate>Fri, 26 Nov 2021 01:39:50 GMT</pubDate>
+            <description><![CDATA[职位:  高级技术专家]]></description>
+            <content:encoded><![CDATA[<p><img src="https://3306pai-1255499614.cos.ap-guangzhou.myqcloud.com/sz2021/%E5%AE%8B%E5%88%A9%E5%85%B5.jpg"/></p><p><strong>职位:</strong>  高级技术专家</p><p><strong>公司:</strong> 阿里云智能</p><p><strong>个人简介:</strong> 2018年加入阿里云数据库团队从事RDS For MySQL内核的开发工作。2009-2018年在Oracle/MySQL研发团队从事MySQL Replication的开发工作。</p><h2>分享</h2><ul><li>2021年深圳站分享 <a href="http://hdxu.cn/FWy1R">《待定》</a></li></ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[BoHuTang | 张雁飞]]></title>
+            <link>https://3306pai.cn/mentors/tangbohu</link>
+            <guid>BoHuTang | 张雁飞</guid>
+            <pubDate>Fri, 26 Nov 2021 01:39:50 GMT</pubDate>
+            <description><![CDATA[职位:  Datafuse Labs Co-Founder]]></description>
+            <content:encoded><![CDATA[<p><img src="https://3306pai-1255499614.cos.ap-guangzhou.myqcloud.com/sz2021/%E5%BC%A0%E9%9B%81%E9%A3%9E.jpg"/></p><p><strong>职位:</strong>  Datafuse Labs Co-Founder</p><p><strong>公司:</strong>  Datafuse Labs </p><p><strong>个人简介:</strong> Datafuse Labs 联合创始人 ，前阿里云数据库内核组早期成员、前青云数据库团队负责人。 开源 Databend 项目主要负责人。</p><h2>分享</h2><ul><li>2021年深圳站分享 <a href="http://hdxu.cn/FWy1R">《开源云原生数仓 Databend》</a></li></ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[王奇 | 青云科技]]></title>
+            <link>https://3306pai.cn/mentors/wangqi-qingcloud</link>
+            <guid>王奇 | 青云科技</guid>
+            <pubDate>Fri, 26 Nov 2021 01:39:50 GMT</pubDate>
+            <description><![CDATA[职位：  数据库团队负责人]]></description>
+            <content:encoded><![CDATA[<p><img src="https://3306pai-1255499614.cos.ap-guangzhou.myqcloud.com/sz2021/%E7%8E%8B%E5%A5%87.jpg"/></p><p><strong>职位：</strong>  数据库团队负责人</p><p><strong>公司：</strong> 青云科技</p><p><strong>个人简介：</strong> 目前从事 PaaS 中间件服务（Redis/MongoDB/ELK 等）开发工作，对 NoSQL 数据库有深入的研究以及丰富的二次开发经验，热衷对 NoSQL 数据库领域内的最新技术动态的学习，能够把握行业技术发展趋势。</p><h2>分享</h2><ul><li>2021年深圳站分享 <a href="http://hdxu.cn/FWy1R">《NoSQL 技术实践及未来展望》</a></li></ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[肖博 | Vivo]]></title>
+            <link>https://3306pai.cn/mentors/xiaobo-vivo</link>
+            <guid>肖博 | Vivo</guid>
+            <pubDate>Fri, 26 Nov 2021 01:39:50 GMT</pubDate>
+            <description><![CDATA[职位:  存储技术研发总监]]></description>
+            <content:encoded><![CDATA[<p><img src="https://3306pai-1255499614.cos.ap-guangzhou.myqcloud.com/sz2021/%E8%82%96%E5%8D%9A.jpg"/></p><p><strong>职位:</strong>  存储技术研发总监</p><p><strong>公司:</strong> Vivo</p><p><strong>个人简介:</strong> 目前在vivo负责数据库产品，对象与文件存储产品、数据存储服务平台三个方向的研发；数据存储行业近10年经验，曾在百度数据库团队和艺龙网数据库团队从事过各种数据库相关的工作，包括数据库的运维研发等。。</p><h2>分享</h2><ul><li>2021年深圳站分享 <a href="http://hdxu.cn/FWy1R">《大规模分布式存储建设实践》</a></li></ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[杨杰 | 腾讯云]]></title>
+            <link>https://3306pai.cn/mentors/yangjie</link>
+            <guid>杨杰 | 腾讯云</guid>
+            <pubDate>Fri, 26 Nov 2021 01:39:50 GMT</pubDate>
+            <description><![CDATA[职位：  数据库技术总监]]></description>
+            <content:encoded><![CDATA[<p><img src="https://3306pai-1255499614.cos.ap-guangzhou.myqcloud.com/sz2021/%E6%9D%A8%E6%9D%B0.jpg"/></p><p><strong>职位：</strong>  数据库技术总监</p><p><strong>公司：</strong> 腾讯云</p><p><strong>个人简介：</strong> 2012年毕业后一直从事MySQL数据库相关的研发工作，对内核、管控平台和智能运维有一些理解。</p><h2>分享</h2><ul><li>2021年深圳站分享 <a href="http://hdxu.cn/FWy1R">《腾讯云数据库规模化运营实践》</a></li></ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[叶金荣 | 万里数据库]]></title>
+            <link>https://3306pai.cn/mentors/yejr</link>
+            <guid>叶金荣 | 万里数据库</guid>
+            <pubDate>Fri, 26 Nov 2021 01:39:50 GMT</pubDate>
+            <description><![CDATA[职位：  开源生态负责人]]></description>
+            <content:encoded><![CDATA[<p><img src="https://3306pai-1255499614.cos.ap-guangzhou.myqcloud.com/sz2021/%E5%8F%B6%E9%87%91%E8%8D%A3.png"/></p><p><strong>职位：</strong>  开源生态负责人</p><p><strong>公司：</strong> 万里数据库</p><p><strong>个人简介：</strong> 万里数据库开源生态负责人，Oracle MySQL ACE Director，腾讯云TVP成员。</p><h2>分享</h2><ul><li>2021年深圳站分享 <a href="http://hdxu.cn/FWy1R">《GreatSQL特性介绍及未来展望》</a></li></ul>]]></content:encoded>
+        </item>
+    </channel>
+</rss>

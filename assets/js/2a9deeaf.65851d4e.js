@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdatabend_official_front=self.webpackChunkdatabend_official_front||[]).push([[3911],{4382:function(a){a.exports=JSON.parse('{"allTagsPath":"/mentors/tags","slug":"/mentors/tags/\u534e\u4e3a\u4e91","name":"\u534e\u4e3a\u4e91","count":1,"permalink":"/mentors/tags/\u534e\u4e3a\u4e91"}')}}]);

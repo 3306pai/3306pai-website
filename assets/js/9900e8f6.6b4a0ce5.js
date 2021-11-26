@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdatabend_official_front=self.webpackChunkdatabend_official_front||[]).push([[9522],{8946:function(a){a.exports=JSON.parse('{"allTagsPath":"/mentors/tags","slug":"/mentors/tags/vivo","name":"Vivo","count":1,"permalink":"/mentors/tags/vivo"}')}}]);
