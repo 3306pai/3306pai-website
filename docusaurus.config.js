@@ -56,15 +56,14 @@ const config = {
       }),
     ],
     [
-      '@docusaurus/plugin-content-docs',
-      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      '@docusaurus/plugin-content-blog',
+      /** @type {import('@docusaurus/plugin-content-blog').Options} */
       ({
         id: 'mentors',
         path: 'mentors',
         routeBasePath: 'mentors',
-        sidebarPath: require.resolve('./sidebarsMentors.js'),
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
+        blogSidebarCount: "ALL",
+        blogSidebarTitle: "嘉宾列表"
       }),
     ],
   ],
@@ -91,7 +90,7 @@ const config = {
             items: [
               {
                 label: '嘉宾',
-                to: '/mentors/liukaiyang-action',
+                to: '/mentors',
               },
               {
                 label: '往期PPT',
@@ -123,7 +122,7 @@ const config = {
               },
               {
                 label: '嘉宾',
-                to: '/mentors/liukaiyang-action',
+                to: '/mentors',
               }
             ],
           },

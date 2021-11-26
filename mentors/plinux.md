@@ -13,5 +13,4 @@ tags: [华为云, 3306π深圳站2021]
 **个人简介：** 华为云数据库首席架构师， MariaDB 基金会成员，Oracle MySQL ACE Director，知名 MySQL 内核开发者。。
 
 ## 分享
-
 *  2021年深圳站分享 [《待定》](http://hdxu.cn/FWy1R)
