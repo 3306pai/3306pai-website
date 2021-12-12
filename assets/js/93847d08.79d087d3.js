@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdatabend_official_front=self.webpackChunkdatabend_official_front||[]).push([[8070],{8868:function(a){a.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/3306-\u03c0\u6df1\u5733\u7ad9-2021","name":"3306\u03c0\u6df1\u5733\u7ad92021","count":1,"permalink":"/blog/tags/3306-\u03c0\u6df1\u5733\u7ad9-2021"}')}}]);

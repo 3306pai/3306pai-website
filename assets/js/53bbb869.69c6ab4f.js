@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdatabend_official_front=self.webpackChunkdatabend_official_front||[]).push([[9193],{5924:function(a){a.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/inno-db","name":"InnoDB","count":1,"permalink":"/blog/tags/inno-db"}')}}]);

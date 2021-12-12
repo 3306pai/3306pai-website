@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdatabend_official_front=self.webpackChunkdatabend_official_front||[]).push([[2792],{942:function(a){a.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/datafuse-labs","name":"Datafuse Labs","count":1,"permalink":"/blog/tags/datafuse-labs"}')}}]);
