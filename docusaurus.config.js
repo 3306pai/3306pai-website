@@ -80,7 +80,7 @@ const config = {
             label: '首页',
             activeBaseRegex: '^/$',
           },
-          {to: '/meeting/3306pai-sz-2021', label: '会议', position: 'left'},
+          {to: '/meeting/3306pai-bj-2023', label: '会议', position: 'left'},
           {to: 'sponser', label: '赞助商', position: 'left'},
           {to: 'blog', label: 'Blog', position: 'left'},
           {

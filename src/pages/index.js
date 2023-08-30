@@ -83,7 +83,7 @@ function Home() {
           </table>
         </div>
         <div className={`${styles.mentors} global-container-width`}>
-          <div className={styles.mainTitle}>云原生--数据和未来-3306π深圳站</div>
+          <div className={styles.mainTitle}>3306π 嘉宾成员</div>
           <div className={styles.mentorsContainer} data-pc>
             <img src={require('@site/static/img/home/pre.png').default} onClick={swiperPre} className={styles.pre}/>
             <img src={require('@site/static/img/home/next.png').default} onClick={swiperNext} className={styles.next}/>
