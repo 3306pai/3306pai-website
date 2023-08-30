@@ -13,11 +13,20 @@ const table = {
   ],
   tableData: [
     {
+      time: "2023.9.16",
+      area: "北京",
+      subject: "3306π 数据库朋友圈",
+      status: 0,
+      statusText: "报名",
+      link: 'https://www.huodongxing.com/event/1716596158000',
+      show: true
+    },
+    {
       time: "2021.12.18",
       area: "深圳",
       subject: "云原生--数据和未来",
-      status: 0,
-      statusText: "报名中",
+      status: 1,
+      statusText: "完成",
       link: 'https://4331392452249.huodongxing.com/event/3623282483400',
       show: true
     },
@@ -25,8 +34,8 @@ const table = {
       time: "2022.1.8",
       area: "北京",
       subject: "开源数据库最佳实践",
-      status: -1,
-      statusText: '敬请期待',
+      status: 1,
+      statusText: '完成',
       link: 'https://4331392452249.huodongxing.com/event/5606442046900',
       show: true
     },
@@ -46,7 +55,7 @@ const table = {
       status: 1,
       statusText: '完成',
       link: 'https://4331392452249.huodongxing.com/event/4592624816200',
-      show: true
+      show: false
     },
     {
       time: "2021.10.23",
@@ -55,7 +64,7 @@ const table = {
       status: 1,
       statusText: "完成",
       link: 'https://4331392452249.huodongxing.com/event/5616552405000',
-      show: true
+      show: false
     }
   ]
 }
